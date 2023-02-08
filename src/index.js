@@ -1,9 +1,8 @@
-// import React from 'react'
-import ReactDOM from 'react-dom';
-import paintings from '../src/paintings.json';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import App from './App';
+import './index.css';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -49,31 +48,22 @@ import paintings from '../src/paintings.json';
 //   </div>
 // );
 
-function Painting(props) {
-  const { url, title, profileUrl, authorName, price } = props;
-  console.log(props);
-  return (
-    <div>
-      <img src={url} alt={title} width="480" />
-      <h2>{props.title}</h2>
-      <p>
-        Автор: <a href={profileUrl}>{authorName}</a>
-      </p>
-      <p>Цена: {price} кредитов</p>
-      <p>Доступность: заканчивается или есть в наличии</p>
-      <button type="button">Добавить в корзину</button>
-    </div>
-  );
-}
+// const painting = paintings[0];
 
-const painting = paintings[0];
-ReactDOM.render(
-  <Painting
-    url={painting.url}
-    title={painting.title}
-    authorName={painting.author.tag}
-    profileUrl={painting.author.url}
-    price={painting.price}
-  />,
-  document.querySelector('#root'),
+// ReactDOM.render(
+//   <Painting
+//     url={painting.url}
+//     title={painting.title}
+//     authorName={painting.author.tag}
+//     profileUrl={painting.author.url}
+//     price={painting.price}
+//   />,
+//   document.querySelector('#root'),
+// );
+// ReactDOM.render(<App />, document.querySelector('#root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
